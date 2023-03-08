@@ -61,8 +61,8 @@ class Cond<ValType> extends Expression {
       Cond<ValType>(field, Op.Lt, value);
 
   /// DSL to create 'is like' relational condition
-  static Cond<String> like(Field<String> field, String value) =>
-      Cond<String>(field, Op.Like, value);
+  static Cond<String?> like(Field<String?> field, String? value) =>
+      Cond<String?>(field, Op.Like, value);
 
   /// DSL to create 'in-between' relational condition
   static Between<ValType> between<ValType>(

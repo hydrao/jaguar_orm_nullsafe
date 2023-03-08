@@ -233,7 +233,7 @@ class Field<ValType> {
 ///             .from('user')
 ///             .where(age > 30)  // Simplifies query expressions
 ///             .exec(adapter).one();
-class IntField extends Field<int> {
+class IntField extends Field<int?> {
   IntField(String name) : super(name);
 
   /// Adds the field to create statement
@@ -264,7 +264,7 @@ class IntField extends Field<int> {
 ///             .from('user')
 ///             .where(score > 90.0)  // Simplifies query expressions
 ///             .exec(adapter).one();
-class DoubleField extends Field<double> {
+class DoubleField extends Field<double?> {
   DoubleField(String name) : super(name);
 
   /// Adds the field to create statement
@@ -293,11 +293,11 @@ class DoubleField extends Field<double> {
 ///             .from('user')
 ///             .where(name.eq('teja'))  // Simplifies query expressions
 ///             .exec(adapter).one();
-class StrField extends Field<String> {
+class StrField extends Field<String?> {
   StrField(String name) : super(name);
 
   /// This is actually 'like' operator
-  Cond<String> operator %(String other) {
+  Cond<String?> operator %(String? other) {
     return like(other);
   }
 
@@ -306,7 +306,7 @@ class StrField extends Field<String> {
   ///     FindStatement find = FindStatement();
   ///     Field<String> author = Field<String>('author');
   ///     find.where(author.like('%Mark%'));
-  Cond<String> like(String value) => Cond.like(this, value);
+  Cond<String?> like(String? value) => Cond.like(this, value);
 
   /// Adds the field to create statement
   void create(Create statement,
@@ -328,7 +328,7 @@ class StrField extends Field<String> {
 
 /// DateTimeField is a convenience DSL used to construct queries in a concise and
 /// understandable way.
-class DateTimeField extends Field<DateTime> {
+class DateTimeField extends Field<DateTime?> {
   DateTimeField(String name) : super(name);
 
   /// Adds the field to create statement
@@ -341,7 +341,7 @@ class DateTimeField extends Field<DateTime> {
 
 /// BoolField is a convenience DSL used to construct queries in a concise and
 /// understandable way.
-class BoolField extends Field<bool> {
+class BoolField extends Field<bool?> {
   BoolField(String name) : super(name);
 
   /// Adds the field to create statement

@@ -504,7 +504,7 @@ Field parseColumn(FieldElement f, DartObject obj) {
     }
 
     Foreign fore =
-        BelongsToForeign(bean, refCol, byHasMany ?? false, toMany ?? false);
+        BelongsToForeign(bean, refCol, byHasMany, toMany ?? false);
     return Field(
         f.type.getDisplayString(withNullability: true), f.name, colName,
         isNullable: isNullable ?? true,

@@ -11,15 +11,17 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  jaguar_query: # ^2.2.9
+  jaguar_query: 
+    # path: ../query # ^2.2.9
     git:
-      url: https://github.com/isaacfi/jaguar_orm_nullsafe.git
+      url: https://github.com/hydrao/jaguar_orm_nullsafe.git
       path: query
   jaguar_orm: # ^2.2.7
+    #path: ../orm
     git:
-      url: https://github.com/isaacfi/jaguar_orm_nullsafe.git
+      url: https://github.com/hydrao/jaguar_orm_nullsafe.git
       path: orm
-  analyzer: ^1.7.2
+  analyzer: ^5.7.1
   build: ^2.1.0
   logging: ^1.0.1
   source_gen: ^1.0.0
